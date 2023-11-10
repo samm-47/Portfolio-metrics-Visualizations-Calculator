@@ -109,7 +109,9 @@ def get_historical_data(symbol, api_key):
     return None
 if __name__ == '__main__':
     stock_data = get_data()
+    # Initialize a list to store DataFrames for each stock
     all_stock_dfs = []
+    # Iterate through each stock in the user input
     for stock in stock_data:
         print(f"Stock: {stock['Symbol']}, Quantity: {stock['Number of Stocks']}")
         historical_data = get_historical_data(stock['Symbol'], rapidapi_key)
